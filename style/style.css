@@ -1830,12 +1830,45 @@ ul {
     overflow: hidden;
 }
 
+.mobile-pdf-notice {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(16, 24, 40, 0.95);
+    border: 1px solid var(--border-glass-bright);
+    border-radius: var(--radius-md);
+    height: 100%;
+}
+
 .pdf-iframe {
     width: 100%;
     height: 100%;
     border: none;
     border-radius: var(--radius-md);
     background: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .pdf-iframe {
+        display: none !important;
+    }
+
+    .mobile-pdf-notice {
+        display: flex !important;
+    }
+
+    .modal-large {
+        height: auto !important;
+        max-height: 90vh !important;
+        padding: 18px !important;
+    }
+
+    .modal-pdf-body {
+        min-height: auto !important;
+    }
 }
 
 /* Toast Notifications */
