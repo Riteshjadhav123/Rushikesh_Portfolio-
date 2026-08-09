@@ -1983,29 +1983,51 @@ ul {
 
 
 /* ==========================================================================
-   RESPONSIVE MEDIA QUERIES
+   RESPONSIVE MEDIA QUERIES (MATCHING RITESH PORTFOLIO MOBILE DESIGN)
    ========================================================================== */
 
 @media (max-width: 1024px) {
+    .section-container {
+        padding: 0 16px;
+    }
+
     .hero-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 36px;
         text-align: center;
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 6.5vw, 3.2rem);
     }
 
     .hero-subtitle-box {
         justify-content: center;
+        flex-wrap: wrap;
+        font-size: 1.15rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-actions {
         justify-content: center;
+        gap: 12px;
     }
 
     .hero-meta {
         justify-content: center;
+        gap: 16px;
     }
 
     .contact-grid {
         grid-template-columns: 1fr;
+        gap: 28px;
     }
 
     .wrapper {
@@ -2015,91 +2037,153 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .header {
+        background: rgba(11, 15, 25, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav-container {
+        padding: 12px 16px;
+    }
+
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 65px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
-        background: var(--bg-darker);
+        height: calc(100vh - 65px);
+        background: rgba(6, 9, 17, 0.96);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        display: flex;
         flex-direction: column;
-        justify-content: center;
-        transition: 0.3s ease-in-out;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+        gap: 14px;
+        transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        border-top: 1px solid var(--border-glass);
     }
 
     .nav-menu.active {
         left: 0;
     }
 
+    .nav-link {
+        width: 88%;
+        max-width: 320px;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 1.02rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border-glass);
+        border-radius: var(--radius-md);
+    }
+
+    .nav-link.active {
+        background: var(--gradient-primary);
+        color: #060911;
+    }
+
     .nav-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-glass);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+        font-size: 1.4rem;
     }
 
-    .hero-title {
-        font-size: 2.2rem;
+    .avatar-wrapper {
+        width: clamp(200px, 55vw, 260px);
+        height: clamp(200px, 55vw, 260px);
+        margin: 0 auto;
     }
 
-    .section-title {
-        font-size: 1.8rem;
+    .avatar-img {
+        width: clamp(160px, 45vw, 210px);
+        height: clamp(160px, 45vw, 210px);
     }
 
-    .wrapper {
-        height: 52rem;
+    .ring-1 { width: clamp(190px, 50vw, 240px); height: clamp(190px, 50vw, 240px); }
+    .ring-2 { width: clamp(210px, 55vw, 260px); height: clamp(210px, 55vw, 260px); }
+    .ring-3 { width: clamp(230px, 60vw, 280px); height: clamp(230px, 60vw, 280px); }
+
+    .badge-float {
+        padding: 6px 12px;
+    }
+    .badge-float i { font-size: 1.1rem; }
+    .badge-float strong { font-size: 0.75rem; }
+    .badge-float small { font-size: 0.68rem; }
+
+    .badge-1 { top: -10px; left: -10px; }
+    .badge-2 { bottom: 10px; right: -10px; }
+    .badge-3 { bottom: -25px; left: 10px; }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
-    .book .book-page {
-        padding: 1.2rem;
+    .stat-card {
+        padding: 18px 12px;
     }
 
-    .page-front, .page-back {
-        padding: 1.2rem;
-    }
+    .stat-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .stat-number { font-size: 1.8rem; }
+    .stat-plus { font-size: 1.5rem; }
+    .stat-label { font-size: 0.85rem; margin-top: 2px; }
+    .stat-desc { font-size: 0.72rem; }
 
-    .services-box {
+    .competencies-grid {
         grid-template-columns: 1fr;
     }
-}
 
-@media (max-width: 576px) {
-    .nav-container {
-        padding: 12px 12px;
+    .filter-bar {
+        overflow-x: auto;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+        scrollbar-width: none;
     }
 
-    .nav-logo {
-        font-size: 1.1rem;
-        gap: 6px;
+    .filter-bar::-webkit-scrollbar {
+        display: none;
     }
 
-    .logo-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
+    .filter-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+        font-size: 0.82rem;
+        padding: 6px 16px;
     }
 
-    .nav-actions {
-        gap: 6px;
+    .timeline-wrapper {
+        padding-left: 20px;
     }
 
-    .btn-switch {
-        padding: 6px 10px;
+    .timeline-wrapper::before {
+        left: 8px;
+    }
+
+    .timeline-dot {
+        left: -32px;
+        width: 26px;
+        height: 26px;
         font-size: 0.75rem;
     }
 
-    .btn-resume-nav {
-        padding: 6px 12px;
-        font-size: 0.75rem;
+    .timeline-card {
+        padding: 18px;
     }
 
-    .btn-switch .switch-text {
-        font-size: 0.72rem;
-    }
-
-    .status-badge {
-        padding: 6px 12px;
-    }
-
-    .status-text {
-        font-size: 0.78rem;
+    .timeline-role {
+        font-size: 1.15rem;
     }
 
     .hero-actions {
@@ -2110,18 +2194,59 @@ ul {
     .hero-actions .btn {
         width: 100%;
     }
+
+    .wrapper {
+        height: 52rem;
+    }
 }
 
-@media (max-width: 380px) {
-    .switch-text {
-        display: none;
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 10px 10px;
+    }
+
+    .nav-logo {
+        font-size: 1.05rem;
+        gap: 6px;
+    }
+
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+
+    .nav-actions {
+        gap: 6px;
     }
 
     .btn-switch {
-        padding: 6px 8px;
+        padding: 5px 8px;
+        font-size: 0.75rem;
     }
 
-    .btn-resume-nav span {
-        display: inline-block;
+    .btn-resume-nav {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.75rem, 8vw, 2.3rem);
+    }
+
+    .status-badge {
+        padding: 6px 12px;
+    }
+
+    .status-text {
+        font-size: 0.76rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-card {
+        padding: 20px 16px;
     }
 }
