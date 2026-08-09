@@ -437,6 +437,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    const menuResumeLink = document.getElementById("menu-resume-link");
+    if (menuResumeLink && resumeModal) {
+        menuResumeLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (navMenu) navMenu.classList.remove("active");
+            resumeModal.classList.add("active");
+        });
+    }
+
     if (closeResumeModal && resumeModal) {
         closeResumeModal.addEventListener("click", () => {
             resumeModal.classList.remove("active");

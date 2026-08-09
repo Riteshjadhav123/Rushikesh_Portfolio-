@@ -2026,3 +2026,69 @@ ul {
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 576px) {
+    .nav-container {
+        padding: 12px 12px;
+    }
+
+    .nav-logo {
+        font-size: 1.1rem;
+        gap: 6px;
+    }
+
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .btn-switch {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+    }
+
+    .btn-resume-nav {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .btn-switch .switch-text {
+        font-size: 0.72rem;
+    }
+
+    .status-badge {
+        padding: 6px 12px;
+    }
+
+    .status-text {
+        font-size: 0.78rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .switch-text {
+        display: none;
+    }
+
+    .btn-switch {
+        padding: 6px 8px;
+    }
+
+    .btn-resume-nav span {
+        display: inline-block;
+    }
+}
