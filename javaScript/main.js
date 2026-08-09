@@ -446,6 +446,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    const heroResumeBtn = document.getElementById("hero-resume-btn");
+    if (heroResumeBtn && resumeModal) {
+        heroResumeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            resumeModal.classList.add("active");
+        });
+    }
+
     if (closeResumeModal && resumeModal) {
         closeResumeModal.addEventListener("click", () => {
             resumeModal.classList.remove("active");
